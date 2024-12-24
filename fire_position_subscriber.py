@@ -7,13 +7,13 @@ from std_msgs.msg import String
 import serial
 import time
 
-# 화재 위치 정보를 구독하는 노드 클래스 정의
+# 화재 위치 정보를 구하는 노드 클래스 정의
 class FirePositionSubscriber(Node):
     def __init__(self):
         # 노드 이름 설정
         super().__init__('fire_position_subscriber')
         
-        # 화재 위치 정보를 구독하는 토픽 구독 설정
+        # 화재 위치 정보를 구하는 토픽 설정
         self.sub_fire_position = self.create_subscription(
             String,  # 메시지 타입
             'yolov5/fire_position',  # 구독할 토픽 이름
